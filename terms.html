@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Haichang Brand</title>
+  <meta name="description" content="Terms of Service for Haichang Brand." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } };</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .legal h2 { font-size: 1.05rem; font-weight: 700; margin-top: 2rem; margin-bottom: .5rem; color: #111827; }
+    .legal p, .legal li { color: #4b5563; line-height: 1.7; font-size: .925rem; }
+    .legal ul { list-style: disc; padding-left: 1.25rem; margin: .5rem 0; }
+    .legal p { margin: .5rem 0; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <div id="site-header"></div>
+  <main class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="text-3xl font-extrabold tracking-tight">Terms of Service</h1>
+    <p class="mt-2 text-sm text-gray-400">Last updated: <span data-config="legal.lastUpdated"></span></p>
+
+    <div class="legal mt-6">
+      <p>These Terms of Service ("Terms") govern your access to and use of the website operated by
+        <strong data-config="company.legalName"></strong> ("we", "us", "our") and your purchase of products from
+        <strong data-config="brand.name"></strong>. By accessing our website or placing an order, you agree to be bound by these Terms.</p>
+
+      <h2>1. Eligibility</h2>
+      <p>You must be at least 18 years old, or have the consent of a parent or legal guardian, and be legally capable of entering into binding contracts to use this website and make purchases.</p>
+
+      <h2>2. Products & Pricing</h2>
+      <p>We sell household daily goods and beauty products. We make every effort to display product details, colours, and prices accurately. All prices are listed in <strong data-config="currency.code"></strong> and are subject to change without notice. Product images may be illustrative; actual items may vary slightly.</p>
+
+      <h2>3. Orders & Acceptance</h2>
+      <p>Your order is an offer to purchase. We reserve the right to accept or decline any order, including where a product is out of stock, a pricing error has occurred, or we suspect fraud. A contract is formed only when we send you an order confirmation.</p>
+
+      <h2>4. Payment</h2>
+      <p>Payments are processed securely by our third-party payment provider. We do not collect or store your full card details on our servers. By submitting a payment, you confirm that you are authorised to use the payment method provided. Orders are charged in <strong data-config="currency.code"></strong>.</p>
+
+      <h2>5. Shipping & Delivery</h2>
+      <p>Delivery times, costs and regions are described in our <a class="font-semibold text-gray-900 underline" href="shipping.html">Shipping &amp; Delivery Policy</a>. Risk of loss passes to you upon delivery to the address you provide.</p>
+
+      <h2>6. Returns & Refunds</h2>
+      <p>Returns, exchanges and refunds are governed by our <a class="font-semibold text-gray-900 underline" href="refund.html">Refund &amp; Return Policy</a>, which forms part of these Terms.</p>
+
+      <h2>7. Intellectual Property</h2>
+      <p>All content on this website — including text, graphics, logos and images — is owned by or licensed to us and is protected by applicable intellectual property laws. You may not reproduce or use it without our prior written consent.</p>
+
+      <h2>8. Acceptable Use</h2>
+      <p>You agree not to use the website for any unlawful purpose, to interfere with its operation, attempt unauthorised access, or use it to transmit fraudulent or harmful content.</p>
+
+      <h2>9. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, we are not liable for any indirect, incidental or consequential damages arising from your use of the website or products. Nothing in these Terms excludes liability that cannot be excluded under applicable law.</p>
+
+      <h2>10. Governing Law</h2>
+      <p>These Terms are governed by the laws of <strong data-config="company.country"></strong>, without regard to conflict-of-law principles. Disputes will be subject to the exclusive jurisdiction of the competent courts of that jurisdiction.</p>
+
+      <h2>11. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. The "Last updated" date above reflects the latest revision. Continued use of the website after changes constitutes acceptance.</p>
+
+      <h2>12. Contact</h2>
+      <p>Questions about these Terms? Contact us at <a class="font-semibold text-gray-900 underline" data-config="support.email" href="contact.html"></a> or via our <a class="font-semibold text-gray-900 underline" href="contact.html">Contact Us</a> page.</p>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/ui.js"></script>
+</body>
+</html>

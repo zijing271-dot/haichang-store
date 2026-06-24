@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Haichang Brand</title>
+  <meta name="description" content="Contact Haichang Brand customer service." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } };</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <div id="site-header"></div>
+
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="text-3xl font-extrabold tracking-tight">Contact Us</h1>
+    <p class="mt-2 max-w-xl text-gray-500">We're here to help. Reach our customer service team and we'll reply within 1 business day.</p>
+
+    <div class="mt-8 grid gap-8 md:grid-cols-2">
+      <!-- Company / contact details -->
+      <div class="space-y-5">
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-gray-500">Company</h2>
+          <dl class="mt-3 space-y-2 text-sm">
+            <div><dt class="text-gray-400">Legal entity</dt><dd class="font-semibold" data-config="company.legalName"></dd></div>
+            <div><dt class="text-gray-400">Registered address</dt><dd class="font-medium" data-config="company.address"></dd></div>
+            <div><dt class="text-gray-400">Company reg. no.</dt><dd class="font-medium" data-config="company.regNo"></dd></div>
+          </dl>
+        </div>
+        <div class="rounded-2xl border border-gray-100 p-5">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-gray-500">Customer Service</h2>
+          <dl class="mt-3 space-y-2 text-sm">
+            <div><dt class="text-gray-400">Email</dt><dd><a class="font-semibold text-gray-900 underline" id="email-link" data-config="support.email"></a></dd></div>
+            <div><dt class="text-gray-400">Phone</dt><dd class="font-medium" data-config="support.phone"></dd></div>
+            <div><dt class="text-gray-400">Hours</dt><dd class="font-medium" data-config="support.hours"></dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Contact form (opens user's email client via mailto) -->
+      <div class="rounded-2xl border border-gray-100 p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-gray-500">Send a Message</h2>
+        <form id="contact-form" class="mt-4 space-y-4">
+          <div><label class="mb-1 block text-xs font-medium text-gray-600">Your name</label><input required name="name" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none" /></div>
+          <div><label class="mb-1 block text-xs font-medium text-gray-600">Your email</label><input required type="email" name="from" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none" /></div>
+          <div><label class="mb-1 block text-xs font-medium text-gray-600">Order number (optional)</label><input name="order" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none" /></div>
+          <div><label class="mb-1 block text-xs font-medium text-gray-600">Message</label><textarea required name="message" rows="4" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none"></textarea></div>
+          <button class="w-full rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800">Send message</button>
+          <p class="text-center text-[11px] text-gray-400">This opens your email app. For live form handling, connect a form backend (see README).</p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script>
+    // 邮箱链接补 mailto:
+    var el = document.getElementById('email-link');
+    if (el) el.href = 'mailto:' + SITE_CONFIG.support.email;
+
+    // 联系表单 → 生成 mailto（零后端即可用；上线可换 Formspree / 自有后端）
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var fd = new FormData(this);
+      var subject = 'Customer enquiry' + (fd.get('order') ? ' — Order ' + fd.get('order') : '');
+      var body = 'Name: ' + fd.get('name') + '\nEmail: ' + fd.get('from') +
+                 (fd.get('order') ? '\nOrder: ' + fd.get('order') : '') +
+                 '\n\n' + fd.get('message');
+      window.location.href = 'mailto:' + SITE_CONFIG.support.email +
+        '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>

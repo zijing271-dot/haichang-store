@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Secrets — 切勿提交
+.env
+.env.*
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
